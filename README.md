@@ -1,4 +1,4 @@
 # Custom_Goal_Navigator_For_TSRM
 ROS based custom goal navigator application for BAYMAX AMMR.
 
-<img src="Assets/TSRM.png">
+<img src="CUSTOM_GOAL_NAVIGATOR/Assets/TSRM.png">
