@@ -5,7 +5,11 @@ from actionlib import SimpleActionClient
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 import sys
 from PyQt5 import QtWidgets, uic
+from PyQt5.QtWidgets import QAction
 from playsound import playsound
+import os
+import webbrowser
+import subprocess 
 
 class mainwindow(QtWidgets.QMainWindow):
 
@@ -22,6 +26,9 @@ class mainwindow(QtWidgets.QMainWindow):
         self.button6 = self.findChild(QtWidgets.QPushButton, 'bed6')
         self.button7 = self.findChild(QtWidgets.QPushButton, 'home')
         self.button8 = self.findChild(QtWidgets.QPushButton, 'exit')
+        self.action_admin = self.findChild(QtWidgets.QAction,"actionadmin")
+        self.action_complaints = self.findChild(QtWidgets.QAction,"actioncomplaint")
+        self.action_about = self.findChild(QtWidgets.QAction,"actionabout")
 
         self.button1.clicked.connect(self.bed_1)
         self.button2.clicked.connect(self.bed_2)
@@ -31,6 +38,9 @@ class mainwindow(QtWidgets.QMainWindow):
         self.button6.clicked.connect(self.bed_6)
         self.button7.clicked.connect(self.home_button)
         self.button8.clicked.connect(self.quit_button)
+        self.action_admin.triggered.connect(self.admin_button)
+        self.action_complaints.triggered.connect(self.complaints)
+        self.action_about.triggered.connect(self.about)
 
         self.show()
 
@@ -75,6 +85,21 @@ class mainwindow(QtWidgets.QMainWindow):
         print("Returning Home Position")
         # Coordinates for the media room location (you should update these to correct values)
         self.send_goal(-0.045203208923339844, -8.748315811157227, 0.7632381113254401, 0.6461173155243367)
+
+    def admin_button(self):
+        playsound('Assets/click.mp3')
+        subprocess.run("foxglove-studio")
+        
+
+    def complaints(self):
+        playsound('Assets/click.mp3')
+        webbrowser.open('https://www.python.org')
+        
+
+    def about(self):
+        playsound('Assets/click.mp3')
+        webbrowser.open('https://transistatech.wixsite.com/transista/portfolio-collections/my-portfolio/baymax-ammr')
+           
 
     def quit_button(self):
         exit()               

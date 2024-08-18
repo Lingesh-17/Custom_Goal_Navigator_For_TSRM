@@ -395,14 +395,14 @@ background-color: rgb(32, 156, 226);
     <property name="title">
      <string>Options</string>
     </property>
-    <addaction name="actionAdmin_Dashboard"/>
-    <addaction name="actionComplaints"/>
-    <addaction name="actionAbout"/>
+    <addaction name="actionadmin"/>
+    <addaction name="actioncomplaint"/>
+    <addaction name="actionabout"/>
    </widget>
    <addaction name="menuOptions"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionAdmin_Dashboard">
+  <action name="actionadmin">
    <property name="text">
     <string>Admin Dashboard</string>
    </property>
@@ -413,12 +413,12 @@ background-color: rgb(32, 156, 226);
     <enum>QAction::HighPriority</enum>
    </property>
   </action>
-  <action name="actionAbout">
+  <action name="actionabout">
    <property name="text">
     <string>About</string>
    </property>
   </action>
-  <action name="actionComplaints">
+  <action name="actioncomplaint">
    <property name="text">
     <string>Complaints</string>
    </property>
